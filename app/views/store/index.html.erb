@@ -11,6 +11,7 @@
         <%= sanitize(p.description) %>
         <div class="price_line">
           <span class="price"><%= number_to_currency(p.price) %></span>
+					<%= button_to 'Add to Cart', line_items_path(product_id: p) %>
         </div>
       </div>
     <% end %>
