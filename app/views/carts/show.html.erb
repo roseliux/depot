@@ -2,7 +2,7 @@
 <h2>Your Pragmatic Cart</h2>
 
 <table>
-		<% @cart.line_items.each do |item| %>
+		<% @cart.line_items.order(quantity: :desc).each do |item| %>
 			<tr>
 				<td> <%= item.quantity %>&times;</td>
 				<td> <%= item.product.title %> </td>
