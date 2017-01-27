@@ -7,5 +7,4 @@ env:
 script:
   - RAILS_ENV=test bundle exec rake db:migrate --trace
   - bundle exec rake db:test:prepare
-  - rails test
 bundler_args: --binstubs=./bundler_stubs
