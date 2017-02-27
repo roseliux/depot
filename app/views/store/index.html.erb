@@ -11,11 +11,9 @@
   <% @products.each do |p| %>
     <% cache p do %>
       <div class="entry">
-        <%= button_to '', line_items_path(product_id: p),
-            remote: true,
-            style: "background-image: url('#{image_url p.image_url}');",
-            class: 'img'
-         %>
+        <%= form_tag line_items_path(:product_id => p.id), :remote => true do %>
+          <%= image_submit_tag p.image_url, class: 'img'  %>
+        <% end %>
         <h3><%= p.title %></h3>
         <%= sanitize(p.description) %>
         <div class="price_line">
