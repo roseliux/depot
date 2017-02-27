@@ -12,11 +12,10 @@ Run bundle with:
 bundle install
 ```
 
-don't forget to edit config/database.yml with your username and password for the database.
-Then run migrations with:
+Then run setup the database with:
 
 ```ruby
-rails db:migrate
+rails db:setup
 ```
 
 
