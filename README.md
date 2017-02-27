@@ -1,26 +1,22 @@
 # README
+This project is developed with:
+ruby  2.3.3
+rails 5.0.1
+posgresql
 
-This app is hosted at heroku at https://depot-ror5.herokuapp.com
+## Installation
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Run bundle with:
 
-Things you may want to cover:
+```ruby
+bundle install
+```
 
-* Ruby version
+don't forget to edit config/database.yml with your username and password for the database.
+Then run migrations with:
 
-* System dependencies
+```ruby
+rails db:migrate
+```
 
-* Configuration
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
