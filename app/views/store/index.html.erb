@@ -1,12 +1,7 @@
 <p id="notice"><%= notice %></p>
 
 <h1> Catalog </h1>
-<% if session[:counter] > 5 %>
-<h2>
-  You have accessed the store
-  <%= pluralize(session[:counter], 'time', 'times') %>
-</h2>
-<% end %>
+
 <% cache @products do %>
   <% @products.each do |p| %>
     <% cache p do %>
