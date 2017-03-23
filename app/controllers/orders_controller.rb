@@ -3,6 +3,7 @@ class OrdersController < ApplicationController
   before_action :set_cart, only: [:new, :create]
   before_action :ensure_cart_isnt_empty, only: :new
   before_action :set_order, only: [:show, :edit, :update, :destroy]
+  before_action :set_btn
 
   # GET /orders
   # GET /orders.json
@@ -32,13 +33,11 @@ class OrdersController < ApplicationController
       if @order.save
         Cart.destroy(session[:cart_id])
         session[:cart_id] = nil
-        format.html { redirect_to store_index_url, notice:
-          'Thank you for your order.' }
+        format.html { redirect_to store_index_url, notice: 'Thank you for your order.' }
         format.json { render :show, status: :created, location: @order }
       else
         format.html { render :new }
-        format.json { render json: @order.errors,
-          status: :unprocessable_entity }
+        format.json { render json: @order.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -68,6 +67,10 @@ class OrdersController < ApplicationController
   end
 
   private
+
+  def set_btn
+    @show_btn = false
+  end
 
   # Use callbacks to share common setup or constraints between actions.
   def set_order
